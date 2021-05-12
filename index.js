@@ -59,7 +59,7 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(chatId, JSON.stringify(e,' ',2));
   })
 });
-},60*60*1000);
+},10*60*1000);
 });
 bot.onText(/\/stop/, (msg) => {
   clearInterval(interval)

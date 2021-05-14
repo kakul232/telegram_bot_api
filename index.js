@@ -39,7 +39,7 @@ bot.onText(/\/start/, async (msg) => {
   districts.forEach(async dist=>{
   console.log('Looking for '+dist.district_name);
   await sleep(10000);
-  bot.sendMessage(chatId, 'Looking for '+dist);
+  bot.sendMessage(chatId, 'Looking for '+dist.district_name);
   checkVaccineByDistrict(dist.district_id).then(res=>{
     let centers = res.data.centers;
     center_details = centers.map(x=>{
@@ -53,7 +53,7 @@ bot.onText(/\/start/, async (msg) => {
         } 
        
     })
-    bot.sendMessage(chatId, 'Fetch Details');
+    bot.sendMessage(chatId, JSON.stringify(center_details));
 
     // check avaibality
   

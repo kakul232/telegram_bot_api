@@ -125,7 +125,7 @@ async function notifyChannel(center_details){
 
 
 function checkAvailability(center_details){
-    is_available = center_details.filter(x=> x.available >0&& x.age === 18 );
+    is_available = center_details.filter(x=> x.available >0 && x.age === 18 );
     if(is_available.length > 0)
        notifyChannel(buildMsg(is_available))
 
